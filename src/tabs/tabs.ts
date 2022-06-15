@@ -199,6 +199,7 @@ export default class Tabs extends SuperComponent {
   }
 
   changeIndex(index) {
+    if (index === -1) return;
     const currentTab = this.data.tabs[index];
     if (!currentTab?.disabled && index !== this.data.currentIndex) {
       this._trigger('change', { value: currentTab.value });
